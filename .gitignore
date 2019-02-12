@@ -1,13 +1,10 @@
-# OS garbage
-.DS_Store
-Thumbs.db
-
-# Files
-.env
-*.css.map
-*.lock
-package-lock.json
-
-# Folders
-.sass-cache
 node_modules
+.DS_Store
+build/js/
+npm-debug.log*
+__snapshots__
+*.log
+
+*.lock
+
+package-lock.json

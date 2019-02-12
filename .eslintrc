@@ -1,14 +1,32 @@
+
 {
-  env: {
-    browser: true,
-    node: true
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
   },
-  extends: "@inc",
-  parserOptions: {
-    ecmaVersion: 2019,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true
-    }
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 7
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-console": 1
   }
 }
