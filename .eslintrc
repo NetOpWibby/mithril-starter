@@ -1,0 +1,14 @@
+{
+  env: {
+    browser: true,
+    node: true
+  },
+  extends: "@inc",
+  parserOptions: {
+    ecmaVersion: 2019,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true
+    }
+  }
+}
