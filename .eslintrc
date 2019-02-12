@@ -1,32 +1,12 @@
-
 {
-  "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true
   },
-  "extends": "eslint:recommended",
-  "parserOptions": {
-    "sourceType": "module",
-    "ecmaVersion": 7
-  },
-  "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-console": 1
+  extends: "@inc",
+  parserOptions: {
+    ecmaVersion: 7,
+    sourceType: "module"
   }
 }

@@ -1,10 +1,10 @@
-node_modules
+# Files
 .DS_Store
-build/js/
-npm-debug.log*
-__snapshots__
+.env
 *.log
-
 *.lock
+Thumbs.db
 
-package-lock.json
+# Directories
+dist/scripts
+node_modules

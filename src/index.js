@@ -1,12 +1,21 @@
+"use strict";
+
+
+
+//  I M P O R T
+
 import m from "mithril";
+
+//  U T I L S
+
 import CSS from "./styles";
 import Page from "./page";
 
 const links = [
   {
-    path: "/page",
     module: Page,
-    name: "Link to Page"
+    name: "Link to Page",
+    path: "/page"
   }
 ];
 
@@ -23,10 +32,18 @@ const Index = {
     ])
 };
 
-m.route.prefix(""); // #
-const mountNode = document.querySelector("#app");
+const mountNode = document.querySelector("app");
+
 const routes = {
   "/": Index
 };
+
+
+
+//  P R O G R A M
+
+m.route.prefix("");
+
 links.forEach(link => routes[link.path] = link.module);
+
 m.route(mountNode, "/", routes);

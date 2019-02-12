@@ -1,17 +1,17 @@
 {
-  "presets": [
-    ["@babel/preset-env"]
+  presets: [
+    "@babel/env"
   ],
-  "env": {
-    "test": {
-      "presets": [
-        "@babel/preset-env"
+  env: {
+    test: {
+      presets: [
+        "@babel/env"
       ]
     },
-    "production": {
-      "presets": [
-        ["@babel/preset-env"],
-        ["minify"]
+    production: {
+      presets: [
+        "@babel/env",
+        "minify"
       ],
     }
   }
