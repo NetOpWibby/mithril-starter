@@ -1,12 +1,12 @@
 {
   env: {
     browser: true,
-    commonjs: true,
-    es6: true
+    commonjs: true
+    // es6: true
   },
   extends: "@inc",
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 9,
     sourceType: "module"
   }
 }

@@ -47,17 +47,10 @@ export const createConfig = ({ includeDepencies }) => ({
     globals
   },
   plugins: [
-    eslint({
-      cache: true
-    }),
-
-    babel({
-      exclude: "node_modules/**"
-    }),
-
-    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-    commonjs({
-      include: "node_modules/**"
+    // Resolve libs in node_modules
+    resolve({
+      browser: true,
+      main: true
     }),
 
     pathmodify({
@@ -69,10 +62,17 @@ export const createConfig = ({ includeDepencies }) => ({
       ]
     }),
 
-    // Resolve libs in node_modules
-    resolve({
-      jsnext: true,
-      main: true
+    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+    commonjs({
+      include: "node_modules/**"
+    }),
+
+    eslint({
+      cache: true
+    }),
+
+    babel({
+      exclude: "node_modules/**"
     })
   ]
 });

@@ -31,7 +31,7 @@ Script commands defined in `package.json`:
 * `start`: serves the build directory at [localhost:5000](http://localhost:5000)
 * `watch`: starts a local webserver; creates a bundle in `dist/scripts/` that is being updated with each code change; calls LiveReload to refresh the browser after code changes are built
 
-Call `npm run watch` and open a web page at [localhost:8080](http://localhost:8080). The port number is set by environment variable `PORT` in `package.json`.
+Call `npm run watch` and open a web page at [localhost:5000](http://localhost:5000). The port number is set by environment variable `PORT` in `package.json`.
 
 When making changes, the terminal will show lint errors, if any.
 

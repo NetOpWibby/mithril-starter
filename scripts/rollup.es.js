@@ -7,6 +7,7 @@
 import { pkg, createConfig } from "./rollup.base.js";
 
 const env = process.env;
+
 // Use `false` if you are creating a library, or if you are including external script in html
 const includeDepencies = !!parseInt(env.DEPS, 10) || false;
 const baseConfig = createConfig({ includeDepencies });

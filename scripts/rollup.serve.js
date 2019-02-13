@@ -2,9 +2,8 @@
 
 
 
-//  I M P O R T S
+//  I M P O R T
 
-import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
 
 //  U T I L S
@@ -27,9 +26,6 @@ if (!serverPort)
   throw("Missing PORT: no http server port");
 
 targetConfig.plugins.push(
-  livereload({
-    watch: watchDir
-  }),
   serve({
     contentBase: watchDir,
     historyApiFallback: true, // allows Mithril 404 to work!

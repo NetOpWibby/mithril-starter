@@ -8,10 +8,11 @@ import { uglify } from "rollup-plugin-uglify";
 
 //  U T I L S
 
-import { pkg, createConfig } from "./rollup.base.js";
+import { createConfig, pkg } from "./rollup.base.js";
 
 const env = process.env;
 const createSourceMap = env.SOURCEMAP !== undefined ? !!parseInt(env.SOURCEMAP, 10) : true;
+
 // Use `false` if you are creating a library, or if you are including external script in html
 const includeDepencies = !!parseInt(env.DEPS, 10) || false;
 const baseConfig = createConfig({ includeDepencies });

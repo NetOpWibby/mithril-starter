@@ -10,14 +10,6 @@ import m from "mithril";
 
 import Page from "./page";
 
-const links = [
-  {
-    module: Page,
-    name: "Link to Page",
-    path: "/page"
-  }
-];
-
 const Index = {
   view: () => (
     <div>
@@ -32,10 +24,29 @@ const Index = {
   )
 };
 
+const Nope = {
+  view: () => (
+    <div>
+      <h1>404</h1>
+
+      <ul>
+        <li>
+          <a href="/page" oncreate={m.route.link}>Link to Page</a>
+        </li>
+      </ul>
+    </div>
+  )
+};
+
 const mountNode = document.querySelector("app");
 
 const routes = {
-  "/": Index
+  "/": Index,
+  "/page": Page
+};
+
+const notFound = {
+  "/:404...": Nope
 };
 
 
@@ -43,5 +54,4 @@ const routes = {
 //  P R O G R A M
 
 m.route.prefix(""); // no fugly hash in our URLs
-links.forEach(link => routes[link.path] = link.module);
-m.route(mountNode, "/", routes);
+m.route(mountNode, "/", { ...routes, ...notFound });

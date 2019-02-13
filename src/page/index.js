@@ -14,6 +14,8 @@ const Page = {
   view: () => (
     <div>
       <h1>Page</h1>
+
+      <p>This is a page</p>
       <a href="/" oncreate={m.route.link}>Back</a>
     </div>
   )
