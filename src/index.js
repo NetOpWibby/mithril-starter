@@ -8,7 +8,6 @@ import m from "mithril";
 
 //  U T I L S
 
-import CSS from "./styles";
 import Page from "./page";
 
 const links = [
@@ -20,16 +19,17 @@ const links = [
 ];
 
 const Index = {
-  view: () =>
-    m(CSS.page, [
-      m(CSS.pageTitle, "Home"),
-      m(CSS.list, links.map(link => (
-        m(CSS.listItem, m(CSS.link, {
-          href: link.path,
-          oncreate: m.route.link
-        }, link.name))
-      )))
-    ])
+  view: () => (
+    <div>
+      <h1>Home</h1>
+
+      <ul>
+        <li>
+          <a href="/page" oncreate={m.route.link}>Link to Page</a>
+        </li>
+      </ul>
+    </div>
+  )
 };
 
 const mountNode = document.querySelector("app");
@@ -42,8 +42,6 @@ const routes = {
 
 //  P R O G R A M
 
-m.route.prefix("");
-
+m.route.prefix(""); // no fugly hash in our URLs
 links.forEach(link => routes[link.path] = link.module);
-
 m.route(mountNode, "/", routes);

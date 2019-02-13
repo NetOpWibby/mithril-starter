@@ -2,17 +2,9 @@
   presets: [
     "@babel/env"
   ],
-  env: {
-    test: {
-      presets: [
-        "@babel/env"
-      ]
-    },
-    production: {
-      presets: [
-        "@babel/env",
-        "minify"
-      ],
-    }
-  }
+  plugins: [
+    ["@babel/transform-react-jsx", {
+      pragma: "m"
+    }]
+  ]
 }

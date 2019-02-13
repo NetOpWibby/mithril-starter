@@ -6,23 +6,17 @@
 
 import m from "mithril";
 
-//  U T I L
-
-import CSS from "../styles";
-
 
 
 //  P R O G R A M
 
 const Page = {
-  view: ({ attrs }) =>
-    m(CSS.page, [
-      m(CSS.pageTitle, attrs.title || "Page"),
-      m(CSS.link, {
-        href: "/",
-        oncreate: m.route.link
-      }, "Back")
-    ])
+  view: () => (
+    <div>
+      <h1>Page</h1>
+      <a href="/" oncreate={m.route.link}>Back</a>
+    </div>
+  )
 };
 
 
