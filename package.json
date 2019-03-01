@@ -1,66 +1,26 @@
 {
-  "author": "Stephan Hoyer <ste.hoyer@gmail.com>",
+  "author": {
+    "email": "paul@inc.sh",
+    "name": "Paul Anthony Webb"
+  },
   "dependencies": {
-    "domready": "1.0.8",
-    "fastify": "^1.14.1",
-    "fastify-bankai": "^0.4.0",
-    "fastify-compress": "^0.8.0",
-    "fastify-cookie": "^2.1.6",
-    "fastify-helmet": "^3.0.0",
-    "fastify-session": "^1.2.1",
-    "fastify-static": "^1.1.0",
+    "domready": "1.0.7",
+    "fastify": "^2.0.0",
+    "fastify-plugin": "^1.5.0",
     "mithril": "1.1.6",
-    "mithril-node-render": "2.3.1",
+    "mithril-node-render": "2.2.0",
     "w3c-xmlhttprequest": "2.1.3"
   },
   "description": "Example isomorphic mithril application",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
-    "@babel/plugin-proposal-function-sent": "^7.2.0",
-    "@babel/plugin-proposal-json-strings": "^7.2.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-syntax-import-meta": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/polyfill": "^7.2.5",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/register": "^7.0.0",
-    "@inc/eslint-config": "^1.0.5",
-    "browser-sync": "^2.26.3",
-    "budo": "^11.6.0",
-    "eslint": "^5.13.0",
-    "husky": "^1.3.1",
-    "nodemon": "^1.18.10",
-    "npm-run-all": "^4.1.5",
-    "snazzy": "^8.0.0",
-    "standardx": "^3.0.1",
-    "updates": "^7.1.0"
+    "@inc/eslint-config": "^1.1.3",
+    "eslint": "^5.14.1"
   },
   "engines": {
-    "node": ">=11.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format && git add -A :/"
-    }
+    "node": ">=10.0.0"
   },
   "license": "MIT",
   "main": "index.js",
-  "name": "mithril-isomorphic-example",
-  "repository": "https://github.com/StephanHoyer/mithril-isomorphic-example",
-  "scripts": {
-    "format": "eslint '**/*.js' --fix",
-    "start": "node index.js",
-    "test": "run-s test:*",
-    "test:dependencies": "updates -u ./",
-    "test:lint": "standardx --verbose | snazzy",
-    "watch": "budo index.js --port 8000 --live -- -t babelify",
-    "———watch": "nodemon",
-    "update": "updates -u ./"
-  },
+  "name": "mithril-starter",
   "version": "1.0.0"
 }

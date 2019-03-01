@@ -2,9 +2,8 @@
 
 
 
-//  E X P O R T S
-
-module.exports = exports = {
+module.exports = {
   "/": require("./pages/home"),
+  "/second-page": require("./pages/second"),
   "/with-route-resolver/:id": require("./pages/with-route-resolver")
 };

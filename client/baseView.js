@@ -1,16 +1,17 @@
-"use strict";
+"use strict"; /* global document */
 
 
-
-//  P A C K A G E
 
 const m = require("mithril");
 
+function getTitle(vnode) {
+  if (vnode.state.getTitle)
+    return vnode.state.getTitle();
 
+  return "isomorphic mithril application";
+}
 
-//  E X P O R T
-
-module.exports = exports = view => {
+module.exports = function(view) {
   if (process.browser) {
     return function(vnode) {
       document.title = getTitle(vnode);
@@ -20,7 +21,7 @@ module.exports = exports = view => {
 
   return function(vnode) {
     return [
-      m("!DOCTYPE[html]"),
+      m("!doctype[html]"),
       m("html[lang=en]", [
         m("head", [
           m("title", getTitle(vnode)),
@@ -32,14 +33,3 @@ module.exports = exports = view => {
     ];
   };
 };
-
-
-
-//  H E L P E R
-
-function getTitle(vnode) {
-  if (vnode.state.getTitle)
-    return vnode.state.getTitle();
-
-  return "isomorphic mithril application";
-}

@@ -2,20 +2,12 @@
 
 
 
-//  P A C K A G E
-
 const m = require("mithril");
-
-//  U T I L
 
 const pauseFor = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-
-
-//  E X P O R T
-
-module.exports = exports = {
-  onmatch: async(params, route) => {
+module.exports = {
+  onmatch: async function(params, route) {
     await pauseFor(1000);
 
     return {
@@ -23,7 +15,8 @@ module.exports = exports = {
         return [
           m("div", "route: ", route, JSON.stringify(params)),
           m(
-            "a", {
+            "a",
+            {
               href: "/",
               oncreate: m.route.link
             },
